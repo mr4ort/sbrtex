@@ -1,0 +1,58 @@
+<div class="container" ng-controller="DirectoryCtrl">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">Справочники</a></li>
+                <li><i class="fa fa-angle-right"></i></li>
+            </ol>
+
+            <h1>{{ dy.directory.name }}</h1>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 20px">
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-default">+ Создать новый</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <label class="panel-title">{{ dy.directory.name }}</label>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead >
+                            <tr >
+                                <th ng-repeat="item in dy.directory.fields">{{ item.name }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in dy.directory.items | filter:search">
+                                <td><a href="#/entry/{{ item['id'] }}">{{ item['name'] }}</a></td>
+                                <td>{{ item['weight'] }}</td>
+                                <td>{{ item['point'] }}</td>
+                                <td>{{ item['endDate']| date }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <label class="panel-title">Фильтр</label>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <input class="form-control" type="text" ng-model="search">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

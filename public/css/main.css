@@ -1,0 +1,100 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 100px;
+}
+.m-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.p-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.p-5 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.p-5-all {
+  padding: 5px;
+}
+.p-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.m-l-r {
+  margin-right: 5px !important;
+  margin-left: 5px !important;
+}
+.m-b-20 {
+  margin-bottom: 20px;
+}
+.fa {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.avatar {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.btn-right {
+  margin-left: 10px;
+}
+.vertical-align-middle {
+  vertical-align: middle !important;
+}
+.hr {
+  margin-top: 0;
+  border-top: 1px solid #ddd;
+}
+.hr-line {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-top: 1px solid #ddd;
+}
+.f-s-20 {
+  font-size: 20px;
+}
+.f-s-16 {
+  font-size: 16px;
+}
+.color-success {
+  color: #5cb85c;
+}
+.color-success:hover {
+  color: #327332;
+}
+.color-error {
+  color: #d9534f;
+}
+.color-error:hover {
+  color: #922320;
+}
+.color-info {
+  color: #5bc0de;
+}
+.color-info:hover {
+  color: #1f809c;
+}
+.widgets-product-number {
+  margin: 0;
+}
+.footer {
+  height: 80px;
+  line-height: 80px;
+  color: #333;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.admin-login {
+  position: fixed;
+  top: 20%;
+  width: 300px;
+  left: 50%;
+  margin-left: -150px;
+}

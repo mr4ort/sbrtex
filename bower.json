@@ -1,0 +1,28 @@
+{
+  "name": "detbox",
+  "version": "0.0.2",
+  "description": "Админка сайта SPA",
+  "main": "",
+  "authors": [
+    "Igor Pushkarskiy"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.*",
+    "angular": "1.4.*",
+    "bootstrap": "3.3.*",
+    "angular-route": "1.4.*",
+    "angular-resource": "1.4.*",
+    "font-awesome": "4.4.*",
+    "angular-bootstrap": "~0.14.3"
+  }
+}

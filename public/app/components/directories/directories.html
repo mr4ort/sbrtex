@@ -1,0 +1,13 @@
+<div class="container" ng-controller="DirectoriesCtrl">
+    <div class="row">
+        <h1>{{ ds.title }}</h1>
+        <p>
+            <ul ng-repeat="item in ds.directories">
+                <li>
+                    <a href="#/directory/{{ item.id }}">{{ item.name }}</a>
+                </li>
+            </ul>
+        </p>
+    </div>
+</div>
+
