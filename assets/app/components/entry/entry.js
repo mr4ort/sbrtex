@@ -1,46 +1,50 @@
-/**Елементы справочника**/
-
+/**Елемент справочника**/
 ;(function(){
     'use strict';
-
+    
     angular
         //Иницилизируем модуль
-        .module('ngDirectories.directory', [
+        .module('ngDirectories.entry', [
             'ngRoute',
             'ngResource',
             'ui.bootstrap'
         ])
-        .controller('DirectoryCtrl', DirectoryCtrl)
-        .factory('DirectoryServices', DirectoryServices);
+        .controller('EntryCtrl', EntryCtrl)
+        .factory('EntryServices', EntryServices);
 
     /**Контроллеры**/
     //Инжектим названия зависисмостей, что бы не пропали при минификации
-    DirectoryCtrl.$inject = [
+    EntryCtrl.$inject = [
         '$log',
         '$routeParams',
-        'DirectoryServices'
+        'EntryServices'
     ];
 
-    function DirectoryCtrl($log, $routeParams, DirectoryServices){
+    function EntryCtrl($log, $routeParams, EntryServices){
         //Работаем через объект
-        var dy = this;
-        DirectoryServices.get().$promise.then(
+        var en = this;
+        en.widthAuto = '0';
+        en.date = function(date){
+            return new Date(date);
+        };
+
+        EntryServices.get().$promise.then(
             function(result) {
-                dy.directory = result.response.directory;
-                $log.debug('Элементы справочника ', result.response.directory);
+                en.entry = result.response.entry;
+                $log.debug('Элемент справочника ', result.response.entry);
             }
         );
     }
 
     /**Сервисы**/
     //Инжектим названия зависисмостей, что бы не пропали при минификации
-    DirectoryServices.$inject = [
+    EntryServices.$inject = [
         '$resource'
     ];
 
     //Получаем данные об 1 справочнике
-    function DirectoryServices ($resource) {
-        return $resource('sources/getDirectory.json', {}, {
+    function EntryServices ($resource) {
+        return $resource('sources/getEntry.json', {}, {
             get: {
                 method:'GET',
                 isArray:false

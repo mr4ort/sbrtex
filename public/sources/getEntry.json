@@ -19,7 +19,6 @@
           "name": "Тяжесть",
           "type": "INTEGER",
           "value": 1
-
         },
         {
           "id": "point",

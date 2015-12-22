@@ -1,0 +1,73 @@
+<div class="container" ng-controller="EntryCtrl">
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="sb-breadcrumb">
+                <li class="sb-breadcrumb__item"><a class="sb-breadcrumb__item-href" href="#/">Справочники</a></li>
+                <li class="sb-breadcrumb__item"><span class="sb-breadcrumb__item-splitter">&#8594;</span></li>
+                <li class="sb-breadcrumb__item"><a href="#/directory/{{ en.entry.directory.id }}" class="sb-breadcrumb__item-href">{{ en.entry.directory.name }}</a></li>
+                <li class="sb-breadcrumb__item"><span class="sb-breadcrumb__item-splitter">&#8594;</span></li>
+            </ul>
+            <h1>{{ en.entry.name }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <form ng-class="{'sb-form__width-auto': en.widthAuto == '0'}" class="sb-form  form-horizontal" >
+            <div class="col-sm-12 col-xs-12">
+
+                <div class="sb-form__form-group form-group " ng-repeat="item in  en.entry.items">
+                    <label class="sb-form__form-group-label col-sm-3  col-xs-3 control-label">{{ item.name }}</label>
+                    <div class="col-sm-6 col-xs-6" ng-switch on="item.type">
+
+                        <div ng-switch-when="TEXT">
+                            <input class="form-control" type="text" value="{{ item.value }}" name="{{ item.id }}">
+                        </div>
+
+                        <div ng-switch-when="INTEGER">
+                            <input class="sb-form__form-group-number form-control" type="number" value="{{ item.value }}" name="{{ item.id }}" min="0">
+                        </div>
+
+                        <div ng-switch-when="FLOAT">
+                            <input class="sb-form__form-group-number form-control" type="number" step="0.01" value="{{ item.value }}" name="{{ item.id }}" min="0">
+                        </div>
+
+                        <div ng-switch-when="DATE">
+
+                            <div ng-controller="DateTimePikerCtrl as calendar" class="input-group" >
+                                <input uib-datepicker-popup="{{calendar.format}}" ng-init="calendar.setDate(item.value)" ng-model="calendar.dt" is-open="calendar.status.opened" close-text="Close" type="text" class="sb-form__form-group-date form-control" name="{{ item.id }}" />
+                                <span class="input-group-btn">
+                                   <button type="button" class="btn btn-default sb-btn__default" ng-click="calendar.open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div ng-switch-when="TEXTAREA">
+                            <textarea class="form-control" name="{{ item.id }}" rows="5" >{{ item.value }}</textarea>
+                        </div>
+
+                        <div ng-switch-when="SELECT">
+                            <select class="sb-form__form-group-select form-control" name="{{ item.id }}" >
+                                <option ng-repeat="option in item.values" value="{{option.id}}"  ng-selected="option.selected">{{option.name}}</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="sb-btn sb-btn__success">Сохранить</button>
+                <button class="sb-btn sb-btn__default">Отменить изменения</button>
+                <button class="sb-btn sb-btn__default">Удалить</button>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="checkbox" >
+                    <label>
+                        <input ng-model="en.widthAuto" ng-true-value="1" ng-false-value="0" type="checkbox">Автоматическая ширина элементов
+                    </label>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+

@@ -1,80 +1,154 @@
 /************************
-Вспомогательные классы
+Общие стили
 *************************/
-html
-  position relative
-  min-height 100%
-
 body
-  margin-bottom 100px
-.m-20
-  margin-top 20px
-  margin-bottom 20px
-.p-20
-  padding-top 20px
-  padding-bottom 20px
-.p-5
-  padding-top 5px
-  padding-bottom 5px
-.p-5-all
-  padding 5px
-.p-10
-  padding-top 10px
-  padding-bottom 10px
-.m-l-r
-  margin-right 5px !important
-  margin-left 5px !important
-.m-b-20
-  margin-bottom 20px
-.fa
-  margin-right 5px
-  margin-left 5px
-.avatar
-  margin-left 5px
-  margin-right 5px
-.btn-right
-  margin-left 10px
-.vertical-align-middle
-  vertical-align middle !important
-.hr
-  margin-top 0
-  border-top 1px solid #ddd
-.hr-line
-  margin-top 0
-  margin-bottom 0
-  border-top 1px solid #ddd
-.f-s-20
-  font-size 20px
-.f-s-16
-  font-size 16px
-.color-success
-  color #5cb85c
+  font 14px/20px 'PT Sans', Arial, sans-serif
+  color #000000
+  background-color #eaf5ee
+  padding 40px 20px
+a
+  font-size 14px
+  color #006ad1
+  font-weight 600
+  text-decoration none
+  position relative
   &:hover
-    color darken(#5cb85c, 40%)
-.color-error
-  color #d9534f
-  &:hover
-    color darken(#d9534f, 40%)
-.color-info
-  color #5bc0de
-  &:hover
-    color darken(#5bc0de, 40%)
+    text-decoration none
+    &:before
+      background-color #23527c
+  &:before
+    content ""
+    position absolute
+    display inline-block
+    width 100%
+    bottom 0
+    height 1px
+    background-color #bad6e4
+ul
+  list-style-type none
+  padding-left 0
+  li
+    margin-bottom 10px
+h1
+  font-size 28px
+  font-weight bold
+  margin-bottom 30px
 
-.widgets-product-number
-  margin 0
-.footer
-  height 80px
-  line-height 80px
-  color #333
-  background-color #f8f8f8
-  border-top 1px solid #e7e7e7
-  position absolute
-  bottom: 0
-  width: 100%
+.form-control
+  &:focus
+    background-color #fcfbf5
+    box-shadow none
+    outline none
+    border 1px solid #aaaaaa
+  .input-group-btn
 
-.admin-login
-  position fixed
-  top 20%
-  width 300px
-  left 50%
-  margin-left -150px
+
+.container
+  width 768px !important
+
+/************************
+sb-breadcrumb
+*************************/
+.sb-breadcrumb
+  &__item
+    display inline-block
+
+/************************
+sb-search
+*************************/
+.sb-search
+  &__label
+    padding 15px
+    margin 0
+  &__body
+    border 1px solid #cccccc
+    padding 15px
+    border-radius 10px
+    &-input
+      margin-bottom 15px
+
+/************************
+sb-form
+*************************/
+.sb-form
+  .sb-form__form-group
+    padding 0
+    .sb-form__form-group-label
+      text-align left
+  &.sb-form__width-auto
+    .sb-form__form-group-number
+      width 70px
+      padding-right 0
+    .input-group
+      display block
+      .sb-form__form-group-date
+        width 100px
+    .sb-form__form-group-select
+      width auto
+
+/************************
+sb-table
+*************************/
+.sb-table
+  border-radius 10px
+  overflow hidden
+  td, th
+    padding 15px
+    min-width 70px
+    font-weight bold
+  &__elem
+    &-name
+      width 200px
+  &__body
+    background-color #fff
+    &-item
+      border-bottom 1px solid #dddddd
+      &:hover
+        background-color #fcfbf5
+      &:first-child
+        td:first-child
+          border-top-left-radius 10px
+        td:last-child
+          border-top-right-radius 10px
+      &:last-child
+        td:first-child
+          border-bottom-left-radius 10px
+        td:last-child
+          border-bottom-right-radius 10px
+  &__box-shadow
+    box-shadow 0 3px 25px rgba(0,0,0,0.1)
+
+/************************
+sb-breadcrumb
+*************************/
+.sb-btn
+  height 29px
+  line-height 29px
+  padding-left 14px
+  padding-right 14px
+  margin-right 15px
+  color #000
+  font-size: 14px;
+  font-weight: 600;
+  border none
+  outline none
+  border-radius 6px
+  box-shadow 0 2px 3px rgba(0,0,0,0.3)
+  &__success
+    background: #4effaf
+    background: linear-gradient(to bottom,  #4effaf 0%,#42f7a8 18%,#38f3a2 29%,#29ee9e 39%,#25ec9b 46%,#10e897 57%,#0ce596 61%,#00e392 64%,#00d585 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#4effaf', endColorstr='#00d585',GradientType=0 )"
+    &:hover
+      background: #00d585;
+      background: linear-gradient(to bottom,  #00d585 0%,#00e392 36%,#0ce596 39%,#10e897 43%,#25ec9b 54%,#29ee9e 61%,#38f3a2 71%,#42f7a8 82%,#4effaf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d585', endColorstr='#4effaf',GradientType=0 )"
+  &__default
+    background: #fefefe;
+    background: linear-gradient(to bottom,  #fefefe 0%,#d4d4d4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#d4d4d4',GradientType=0 )"
+    &:hover
+      background: #d4d4d4;
+      background: linear-gradient(to bottom,  #d4d4d4 0%,#fefefe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4d4d4', endColorstr='#fefefe',GradientType=0 )"
+
+

@@ -9,8 +9,7 @@ var gulp = require('gulp'), // Сообственно Gulp JS
 
 //Описываем какие CSS войдут в проект
 var css_other =[
-    './assets/bower/bootstrap/dist/css/bootstrap.css',
-    './assets/bower/font-awesome/css/font-awesome.min.css'
+    './assets/bower/bootstrap/dist/css/bootstrap.css'
 ];
 
 //Описываем какие JS войдут в проект
@@ -20,7 +19,7 @@ var js_lib =[
     './assets/bower/angular-resource/angular-resource.js',
     './assets/bower/jquery/dist/jquery.js',
     './assets/bower/bootstrap/dist/js/bootstrap.min.js',
-    './assets/bower/angular-bootstrap/ui-bootstrap.min.js'
+    './assets/bower/angular-bootstrap/ui-bootstrap-tpls.js'
 ];
 
 //Components JS
@@ -39,7 +38,7 @@ var app_js =[
 //Шрифты
 var fonts =[
     './assets/fonts/**/*',
-    './assets/bower/font-awesome/fonts/**/*'
+    './assets/bower/bootstrap/fonts/**/*'
 ];
 
 // Собираем Stylus

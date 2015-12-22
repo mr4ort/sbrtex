@@ -6,7 +6,8 @@
         .module('ngDirectories', [
             'ngDirectories.directories',
             'ngDirectories.directory',
-            /*'ngDirectories.entry',*/
+            'ngDirectories.entry',
+            'ngDirectories.dateTimePiker',
             'ngRoute',
             'ngResource',
             'ui.bootstrap'
@@ -33,11 +34,11 @@
                 controller: 'DirectoryCtrl',
                 controllerAs:'dy'
             })
-            /*.when('/', {
+            .when('/entry/:Id', {
                 templateUrl: 'app/components/entry/entry.html',
-                controller: 'btEntryCtrl',
-                controllerAs:'btEn'
-            })*/
+                controller: 'EntryCtrl',
+                controllerAs:'en'
+            })
             .otherwise({
                 redirectTo: '/'
             });

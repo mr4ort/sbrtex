@@ -16,10 +16,11 @@
     /**Контроллеры**/
     //Инжектим названия зависисмостей, что бы не пропали при минификации
     DirectoriesCtrl.$inject = [
+        '$log',
         'DirectoriesServices'
     ];
 
-    function DirectoriesCtrl(DirectoriesServices){
+    function DirectoriesCtrl($log, DirectoriesServices){
         //Работаем через объект
         var ds = this;
         ds.title = 'Справочники';
@@ -27,7 +28,7 @@
         DirectoriesServices.query().$promise.then(
             function(result) {
                 ds.directories = result.response.directories;
-                //console.log(result.response.directories)
+                $log.debug('Справочники ', result.response.directories);
             }
         );
     }
